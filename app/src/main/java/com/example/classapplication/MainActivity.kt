@@ -26,9 +26,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun createGames() = Game(
         name = "Minecraft",
-        genre = "Survival",
-        price = 24.99,
-        coverArt = R.drawable.cat,
-        dlc = listOf<String>(),
+        genre = listOf<String>("Survival", "Sandbox"),
+        price = 19.99,
+        coverArt = R.drawable.placeholder,
+        dlc = listOf<String>("N/A")
     )
 }
