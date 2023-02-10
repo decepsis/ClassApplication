@@ -2,33 +2,26 @@ package com.example.classapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.commit
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.classapplication.ui.GameDetailFragment
+import com.example.classapplication.ui.GameFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.game_recycler_view)
-
-        recyclerView.layoutManager = LinearLayoutManager(this)
-
-        val games = mutableListOf<Game>()
-        for(i in 0..30){
-            games.add(createGames())
+        supportFragmentManager.commit {
+            setReorderingAllowed(true)
+            add(R.id.fragment_container_view, GameFragment())
+            addToBackStack(null)
         }
 
-        val adapter = GameAdapter(games)
-        recyclerView.adapter = adapter
+//
 
     }
 
-    private fun createGames() = Game(
-        name = "Minecraft",
-        genre = listOf<String>("Survival", "Sandbox"),
-        price = 19.99,
-        coverArt = R.drawable.placeholder,
-        dlc = listOf<String>("N/A")
-    )
+
 }
