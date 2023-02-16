@@ -4,7 +4,8 @@ class Game(
     val name: String,
     val genre: List<String>,
     val price: Double,
-    val coverArt: Int,
+    val coverArt: String,
     val dlc: List<String>,
+    val summary: String
 
 )

@@ -39,6 +39,7 @@ class GameAdapter(private val games: List<Game>):
         return GameViewHolder(view) { position ->
             val game = games[position]
 
+
             val bundle = bundleOf(
                 "name" to game.name,
                 "price" to game.price,
@@ -64,8 +65,13 @@ class GameAdapter(private val games: List<Game>):
 
     override fun onBindViewHolder(holder: GameViewHolder, position: Int) {
         val game = games[position]
+
+        Glide
+            .with(holder.itemView.context)
+            .load(game.coverArt)
+            .into(holder.gameCover)
+
         val formattedPrice = "$".plus(game.price.toString())
-        holder.gameCover.setImageResource(game.coverArt)
         holder.gameName.text = game.name
         holder.price.text = formattedPrice
         holder.genre.text = game.genre.toString()
