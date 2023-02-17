@@ -45,9 +45,11 @@ class GameAdapter(private val games: List<Game>):
                 "price" to game.price,
                 "genre" to game.genre,
                 "art" to game.coverArt,
-                "dlc" to game.dlc
+                "dlc" to game.dlc,
+                "summary" to game.summary
 
             )
+
 
             val detailFragment = GameDetailFragment()
             detailFragment.arguments = bundle
@@ -57,6 +59,7 @@ class GameAdapter(private val games: List<Game>):
             activity.supportFragmentManager.commit {
                 setReorderingAllowed(true)
                 replace(R.id.fragment_container_view,detailFragment)
+                addToBackStack(null)
             }
         }
     }

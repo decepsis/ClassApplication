@@ -21,12 +21,12 @@
         app:layout_constraintTop_toBottomOf="@id/game_cover_art"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Minecraft" />
+        tools:text="Minecraft" />
     <TextView
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="$24.99"
+        tools:text="$24.99"
         app:layout_constraintTop_toBottomOf="@id/game_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@id/price"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Survival"/>
+        tools:text="Survival"/>
     <TextView
         android:id="@+id/summary"
         android:layout_width="wrap_content"
@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@id/genre"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/Lorem_Ipsum"/>
+        tools:text="@string/Lorem_Ipsum"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

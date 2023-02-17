@@ -21,16 +21,17 @@ class GameDetailFragment : Fragment() {
 
         if (arguments != null){
             val name = requireArguments().getString("name")
-            val price = requireArguments().getString("price")
+            val price = requireArguments().getDouble("price")
             val art = requireArguments().getString("art")
-            val genre = requireArguments().getString("genre")
+            val genre = requireArguments().getStringArrayList("genre")
             val summary = requireArguments().getString("summary")
             val imageView = view.findViewById<ImageView>(R.id.game_cover_art)
+
             Glide.with(this).load(art).into(imageView)
 
             view.findViewById<TextView>(R.id.game_name).text = name
-            view.findViewById<TextView>(R.id.price).text = price
-            view.findViewById<TextView>(R.id.genre).text = genre
+            view.findViewById<TextView>(R.id.price).text = price.toString()
+            view.findViewById<TextView>(R.id.genre).text = genre.toString()
             view.findViewById<TextView>(R.id.summary).text = summary
 
 
